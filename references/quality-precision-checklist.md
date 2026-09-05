@@ -10,7 +10,13 @@ render (so nothing that "looks AI-made" ships unnoticed).
 Never infer, assume, or pattern-match any of the following. If it isn't
 stated explicitly, ask.
 
-1. **Image ↔ caption mapping.** For every photo, get its exact caption
+1. **Image ↔ caption mapping.** Ask the total image count up front, then
+   have the user upload **one image at a time, each with its caption/
+   voiceover line given in the same message** — this is the preferred
+   protocol because it makes a batch mismatch structurally impossible
+   (only one pairing is ever in flight). Track progress explicitly
+   ("صورة 2 من 5 — استلمتها ✅") so nothing gets lost mid-sequence. If the
+   user instead sends several photos together, get every exact caption
    paired 1:1 by filename or explicit order — never "the third image
    probably goes with the third line." Read the full mapping back to the
    user as a numbered list and get an explicit confirmation before

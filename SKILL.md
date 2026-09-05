@@ -93,11 +93,16 @@ often depend on the earlier ones:
 5. **On-screen text per image — map explicitly, never guess.** This is the
    single most common way an AI-driven edit gets caught: a caption landing
    on the wrong shot. Never infer which line of text belongs to which photo
-   from context or ordering. For every image, get its filename/order and
-   its exact caption paired 1:1, and **read the mapping back to the user
-   before building anything** (e.g. "شكل 1 (اسم الملف) → النص كذا، شكل 2 →
-   النص كذا... تمام كده؟"). Language(s) per caption: Arabic, English, or
-   bilingual (see `references/arabic-text-overlay.md`). Full intake
+   from context or ordering. **Preferred method: ask the total image count
+   first, then have the user upload one image at a time, each paired
+   immediately with its own caption/voiceover line in the same message** —
+   this removes batch-mismatch risk entirely, since there's never more than
+   one image-to-text pairing in flight at once. If the user instead sends
+   several images together, get filename/order and exact caption paired
+   1:1 for every one, and **read the full mapping back before building
+   anything** (e.g. "شكل 1 (اسم الملف) → النص كذا، شكل 2 → النص كذا...
+   تمام كده؟"). Language(s) per caption: Arabic, English, or bilingual
+   (see `references/arabic-text-overlay.md`). Full intake
    precision protocol and the anti-"looks AI-made" QA pass before
    rendering: `references/quality-precision-checklist.md` — follow it on
    every project, not just when something looks off.
