@@ -204,12 +204,32 @@ either direction.
 
 ## 3. Getting user files INTO Blender
 
-Files the user uploads land in Claude's sandbox
-(`/mnt/user-data/uploads/...`), which is **not** the same machine as their
-running Blender. `bl_execute` only runs Python text — it can't read Claude's
-sandbox filesystem directly. To get an image onto the user's disk where
-Blender can load it, base64-encode the file content in the sandbox and have
-the injected Blender-side code decode and write it locally, then load it:
+**Check which environment you're actually in before picking a method** —
+this varies and picking wrong just wastes a round-trip:
+
+- **Chat attachments materialize as sandbox files** (classic setup: images
+  land under `/mnt/user-data/uploads/...`). This sandbox is **not** the
+  same machine as the user's running Blender, and `bl_execute` only runs
+  Python text — it can't read the sandbox filesystem directly. Use the
+  base64 relay in this case (below).
+- **Chat attachments do NOT materialize as any accessible file** (some
+  Claude Code environments only let you *see* an inline image via vision,
+  with no local path — check first with `ls`/`find` before assuming; don't
+  silently attempt the base64 relay against a file that doesn't exist).
+  In that case the base64 relay is impossible from this side, but there's
+  a simpler fix: **have the user save the images/logo directly into a
+  folder on the same computer that's running Blender** (e.g. a
+  `project_assets` folder on their Desktop), then either tell you the
+  exact filenames/order or let you `os.listdir()` that folder via
+  `bl_execute` (which runs with full access to that machine, since that's
+  where Blender itself is). Load directly with `bpy.data.images.load()` on
+  those paths — no relay needed at all. This is the simpler, more robust
+  method whenever it's available, and the only one that works in a
+  sandbox-less setup.
+
+When the base64 relay does apply, base64-encode the file content in the
+sandbox and have the injected Blender-side code decode and write it
+locally, then load it:
 
 ```python
 # (sandbox) read + base64-encode the file first, then:
