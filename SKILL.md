@@ -115,6 +115,38 @@ Don't block on every single field — reasonable defaults are fine (e.g.
 9:16, 15–20s, gentle push-in, single focal logo, ask-first on script/music)
 as long as you state the assumption back to the user.
 
+## 2a. New video request: same brand, or a new one — always check first
+
+The moment the user asks for another video (a new request in the same
+conversation, or a returning one later), **don't assume**. Decide which of
+these two paths applies before asking anything else:
+
+- **New brand / new project** → treat it as a completely fresh intake.
+  Discard every previous answer (old logo, colors, tone, duration, aspect
+  ratio, transition choice, script/music decision) — none of it carries
+  over by default. Run the full §2 question set again from scratch as if
+  this were the first video ever requested.
+- **Same brand, new footage/attachments** → if the brand is recognizable
+  from earlier in the conversation (or the user says "نفس البراند"),
+  **confirm it explicitly by name** first — "يعني ده لسه لبراند [X] اللي
+  شغالين عليه؟" — don't silently assume a match just because the request
+  sounds similar. Once confirmed, it's fine to reuse the brand-level
+  decisions already locked in (hero logo, brand colors/font, tone,
+  script-vs-music decision, aspect ratio) *if the user doesn't say
+  otherwise* — but still treat the following as fresh, every time:
+  - **The new images/attachments themselves** — run the full image↔caption
+    mapping confirmation from `references/quality-precision-checklist.md`
+    on this new batch; never assume the new photos map the same way the
+    old ones did.
+  - **The transition style** — ask which transitions to use on this new
+    cut (e.g. "عايز نفس الـ transitions اللي استخدمناها ولا نجرب حاجة
+    مختلفة المرة دي؟") rather than silently reusing the last video's
+    choice — the user's own phrasing above flags this explicitly as
+    something that changes per video even on the same brand.
+
+If it's ambiguous whether this is the same brand or not, ask — don't guess
+either direction.
+
 ## 3. Getting user files INTO Blender
 
 Files the user uploads land in Claude's sandbox
