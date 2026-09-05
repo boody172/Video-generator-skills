@@ -63,20 +63,31 @@ Call via `Blender:execute_blender_code` / `bl_execute`.
 
 ## 2. Gather the inputs (ask once, up front)
 
-Before touching the scene, collect:
+Before touching the scene, collect — in this order, since later answers
+often depend on the earlier ones:
 
-1. **Images** — the product/project photos. The user attaches them in chat;
+1. **Project/brand name.** Always ask first: "اسم المشروع أو البراند اللي
+   هنشتغل عليه إيه؟" This is also the identifier used later for the
+   same-brand-vs-new-project check in §2a.
+2. **Video type and goal.** What kind of video (product ad, brand
+   awareness/launch, explainer, event promo, testimonial/case study, social
+   teaser, etc.) and what it needs to *achieve* (drive sales, build brand
+   recall, explain a feature, announce an event...). This single answer
+   drives most of the downstream creative choices — pacing, whether a
+   voiceover script is likely needed (see `references/audio-and-script.md`'s
+   decision table), transition energy level, and tone.
+3. **Is there a partner/client this project is being made for, or is it
+   standalone?** If there's a client/partner involved, ask whether their
+   logo should be added and treated as the focal hero logo (or how it
+   should coexist with the project's own logo, if there is one) — don't
+   assume standalone, and don't assume co-branded; ask explicitly. See
+   `references/logo-handling.md` for hero-logo vs. multi-logo handling
+   once this is answered.
+4. **Images** — the product/project photos. The user attaches them in chat;
    note their file paths under `/mnt/user-data/uploads/`. If no photos are
    supplied, offer to build the shot entirely in 3D (product mockup,
    backdrop, lighting) from a description of the brand/idea instead.
-2. **Logo(s)** — how many brand logos exist in this project. **Default
-   behavior: focus on a single logo** (the primary brand mark) — it appears
-   as a clean, consistent watermark/bumper (intro sting and/or corner mark)
-   throughout. Only show more than one logo if the user explicitly asks for
-   a co-branded/multi-partner video — see `references/logo-handling.md` for
-   how to pick the "hero" logo and how to handle a multi-logo request when
-   asked.
-3. **On-screen text per image — map explicitly, never guess.** This is the
+5. **On-screen text per image — map explicitly, never guess.** This is the
    single most common way an AI-driven edit gets caught: a caption landing
    on the wrong shot. Never infer which line of text belongs to which photo
    from context or ordering. For every image, get its filename/order and
@@ -87,7 +98,7 @@ Before touching the scene, collect:
    precision protocol and the anti-"looks AI-made" QA pass before
    rendering: `references/quality-precision-checklist.md` — follow it on
    every project, not just when something looks off.
-4. **Voiceover script — ask, don't assume.** Some brands/videos genuinely
+6. **Voiceover script — ask, don't assume.** Some brands/videos genuinely
    read better silent-with-music-and-captions (fashion, luxury, food,
    atmosphere-driven content); others need a spoken script to land the
    message (explainers, testimonials, service/tech pitches, anything with a
@@ -96,15 +107,15 @@ Before touching the scene, collect:
    and if they're unsure, recommend based on the brand/content type (see
    `references/audio-and-script.md` for the decision table and for how to
    actually write and deliver the script). Never silently assume either way.
-5. **Music — ask every time, per project.** Always ask: "عايز أضيف موسيقى
+7. **Music — ask every time, per project.** Always ask: "عايز أضيف موسيقى
    خلفية؟" Don't default it on or off. If yes, ask for a track (or agree on
    mood: upbeat/corporate, cinematic/emotional, minimal/luxury) so audio
    levels (music bed under voiceover, or fuller music-only mix) get set up
    right in §7.
-6. **Duration** — total ad length in seconds (or per-shot duration).
-7. **Aspect ratio** — vertical `9:16` (1080×1920, social) or horizontal
+8. **Duration** — total ad length in seconds (or per-shot duration).
+9. **Aspect ratio** — vertical `9:16` (1080×1920, social) or horizontal
    `16:9` (1920×1080), or square `1:1`.
-8. **Camera & transition style** — dolly-in, slow pan, orbit around
+10. **Camera & transition style** — dolly-in, slow pan, orbit around
    product, static with subtle push, or "surprise me" (pick something
    clean and commercial). Pair this with a transition style from
    `references/cinematic-transitions.md` — never leave transitions as bare
