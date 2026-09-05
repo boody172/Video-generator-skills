@@ -76,13 +76,16 @@ often depend on the earlier ones:
    drives most of the downstream creative choices — pacing, whether a
    voiceover script is likely needed (see `references/audio-and-script.md`'s
    decision table), transition energy level, and tone.
-3. **Is there a partner/client this project is being made for, or is it
-   standalone?** If there's a client/partner involved, ask whether their
-   logo should be added and treated as the focal hero logo (or how it
-   should coexist with the project's own logo, if there is one) — don't
-   assume standalone, and don't assume co-branded; ask explicitly. See
-   `references/logo-handling.md` for hero-logo vs. multi-logo handling
-   once this is answered.
+3. **Hero logo = this project's own logo, by default.** Each project the
+   user brings has its own logo, and that's the one to focus on for that
+   project — don't ask "standalone or partner?" as if it were open every
+   time. Only raise the partner/co-branded question if the user's own
+   framing signals a shared/sponsored piece (e.g. "فيديو مشترك مع..."), or
+   if more than one logo file actually shows up in the attachments for a
+   single project (then ask which one is the hero, per
+   `references/logo-handling.md`). If this project/brand has been worked on
+   earlier in the conversation (or the user confirms "نفس البراند"), reuse
+   the hero logo/identity already established rather than asking again.
 4. **Images** — the product/project photos. The user attaches them in chat;
    note their file paths under `/mnt/user-data/uploads/`. If no photos are
    supplied, offer to build the shot entirely in 3D (product mockup,
@@ -125,6 +128,42 @@ often depend on the earlier ones:
 Don't block on every single field — reasonable defaults are fine (e.g.
 9:16, 15–20s, gentle push-in, single focal logo, ask-first on script/music)
 as long as you state the assumption back to the user.
+
+## 2b. Recurring video type: project progress / milestone update
+
+A common goal (§2 item 2) is showing a client/project owner how far a
+project has come — completed work so far, company logo attached to that
+work, meant to build confidence in the project's progress. Treat this as
+its own pattern, distinct from a straight product ad:
+
+- **Structure**: order shots to read as a progression, not just a gallery —
+  chronological by completion stage if the user can tell you the order
+  (foundations → structure → finishing, or whatever the project's actual
+  phases are), not just the order files were uploaded in. Ask which order
+  reflects real progress if it isn't obvious from filenames/context.
+- **Per-shot labeling**: since this is about *progress*, a short label per
+  shot naming the phase/date/milestone (e.g. "المرحلة الأولى — التأسيس",
+  or a date) reads far more credibly to an owner than an unlabeled photo —
+  ask whether the user has phase names/dates for each image, and map them
+  with the same 1:1 rigor as any other caption (§2 item 5).
+- **Logo placement**: the company logo functions here almost like a stamp
+  of ownership/certification on the completed work — a persistent corner
+  mark throughout (per `references/logo-handling.md`) reads better than a
+  logo that only shows up in a bumper, since the point is "this is our
+  work."
+- **Tone/pacing**: measured and confident, not hyped — steady dolly/pan
+  moves, crossfade or a simple wipe between phases (a wipe reads well here
+  as "moving forward in time"); skip glitch/whip-pan style transitions,
+  which suit energetic consumer ads, not a progress report to a stakeholder.
+- **Voiceover vs. captions**: per `references/audio-and-script.md`'s
+  table this sits closest to the real-estate/industrial/B2B row — a short
+  voiceover summarizing progress (or strong on-screen phase labels if no
+  voiceover) plus a restrained music bed reads as the professional default;
+  confirm with the user rather than assuming.
+- **Closing shot**: end on the logo (closing bumper) over the most complete
+  /impressive shot available, optionally with a one-line status caption
+  ("تم إنجاز X% من المشروع" or similar, only if the user gives you the
+  real figure — never invent a completion percentage or claim).
 
 ## 2a. New video request: same brand, or a new one — always check first
 
