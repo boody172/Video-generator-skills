@@ -76,8 +76,17 @@ Before touching the scene, collect:
    a co-branded/multi-partner video — see `references/logo-handling.md` for
    how to pick the "hero" logo and how to handle a multi-logo request when
    asked.
-3. **On-screen text per image** — exact copy, language(s): Arabic, English,
-   or bilingual (see `references/arabic-text-overlay.md`).
+3. **On-screen text per image — map explicitly, never guess.** This is the
+   single most common way an AI-driven edit gets caught: a caption landing
+   on the wrong shot. Never infer which line of text belongs to which photo
+   from context or ordering. For every image, get its filename/order and
+   its exact caption paired 1:1, and **read the mapping back to the user
+   before building anything** (e.g. "شكل 1 (اسم الملف) → النص كذا، شكل 2 →
+   النص كذا... تمام كده؟"). Language(s) per caption: Arabic, English, or
+   bilingual (see `references/arabic-text-overlay.md`). Full intake
+   precision protocol and the anti-"looks AI-made" QA pass before
+   rendering: `references/quality-precision-checklist.md` — follow it on
+   every project, not just when something looks off.
 4. **Voiceover script — ask, don't assume.** Some brands/videos genuinely
    read better silent-with-music-and-captions (fashion, luxury, food,
    atmosphere-driven content); others need a spoken script to land the
@@ -206,6 +215,11 @@ render, and always offer a single representative-frame preview render first
 (`animation=False`) to check framing/lighting/text/logo placement and color
 grade before committing to the full render.
 
+Before the full render, run the anti-mistake QA pass in
+`references/quality-precision-checklist.md` against the preview frame(s) —
+confirm every caption is on its intended image, the logo isn't distorted,
+and nothing reads as an obvious AI-generated artifact.
+
 ## 9. Delivering the result
 
 The final MP4 lives on the user's own computer at the output path set in
@@ -216,8 +230,9 @@ the relevant `bl_execute` steps.
 ## Quick checklist for a new video request
 
 - [ ] Ping Blender connection — confirm connected
-- [ ] Collect images, confirm single hero logo (or explicit multi-logo ask),
-      captions (+ language)
+- [ ] Collect images, confirm single hero logo (or explicit multi-logo ask)
+- [ ] Map every caption to its exact image 1:1 and read the mapping back to
+      the user for confirmation before building (+ language per caption)
 - [ ] Ask: voiceover script or silent-with-music? (recommend per brand if unsure)
 - [ ] Ask: add background music? get track/mood if yes
 - [ ] Confirm duration, aspect ratio, camera + transition style
@@ -227,5 +242,6 @@ the relevant `bl_execute` steps.
 - [ ] Apply editor-grade transitions between shots + a consistent color grade
 - [ ] Set up audio (voiceover/music/ducking) in the VSE if requested
 - [ ] Set render resolution/fps/frame range/output path
-- [ ] Do a still-frame preview render before the full animation render
+- [ ] Do a still-frame preview render, then run the QA pass in
+      `references/quality-precision-checklist.md` before the full render
 - [ ] Tell the user the local output path when done
